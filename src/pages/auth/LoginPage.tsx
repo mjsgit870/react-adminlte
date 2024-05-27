@@ -1,17 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/auth-layout";
-import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState<boolean>(false)
+  
+  const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     setLoading(true)
-    await new Promise(resolve => setTimeout(resolve, 3000))
-    toast('Kamu berhasil login', { type: 'success' })
+    await new Promise(resolve => setTimeout(resolve, 2000))
     setLoading(false)
+    navigate('/dashboard')
   }
 
   return (
@@ -45,24 +47,13 @@ export default function LoginPage() {
           <div className="col-4">
             <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
               {loading ? (
-                <div>
-                  <span className="spinner-border text-light spinner-border-sm"></span> Loading...
-                </div>
+                <span className="spinner-border text-light spinner-border-sm"></span>
               ) : "Masuk"}
             </button>
           </div>
           {/* /.col */}
         </div>
       </form>
-      <div className="social-auth-links text-center mt-2 mb-3">
-        <a href="#" className="btn btn-block btn-primary">
-          <i className="fab fa-facebook mr-2" /> Masuk dengan Facebook
-        </a>
-        <a href="#" className="btn btn-block btn-danger">
-          <i className="fab fa-google-plus mr-2" /> Masuk dengan Google+
-        </a>
-      </div>
-      {/* /.social-auth-links */}
       <p className="mb-1">
         <a href="forgot-password.html">Lupa password</a>
       </p>

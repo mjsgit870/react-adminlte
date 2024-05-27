@@ -47,26 +47,26 @@ export default function Sidebar() {
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li className="nav-item">
               <NavLink to="/dashboard" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fad fa-chart-pie" />
+                <i className="nav-icon fas fa-chart-pie" />
                 <p>Dashboard</p>
               </NavLink>
             </li>
             <li className="nav-header">DATA MASTER</li>
             <li className="nav-item">
               <NavLink to="/employees" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fad fa-id-card" />
+                <i className="nav-icon fas fa-id-card" />
                 <p>Karyawan</p>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/positions" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fad fa-layer-group" />
+                <i className="nav-icon fas fa-layer-group" />
                 <p>Posisi dan Jabatan</p>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/users" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fad fa-users" />
+                <i className="nav-icon fas fa-users" />
                 <p>User</p>
               </NavLink>
             </li>
