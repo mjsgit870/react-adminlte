@@ -6,7 +6,7 @@ export default function EmployeesPage() {
   const [loading, setLoading] = useState<boolean>(false)
   const [employees, setEmployees] = useState<EmployeeProps[]>([])
 
-  const getEmployees = async (searchFilter: string = 'anton') => {
+  const getEmployees = async (searchFilter?: string) => {
     setLoading(true)
     let employeesFiltered = [
       {

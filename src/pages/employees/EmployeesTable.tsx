@@ -1,5 +1,3 @@
-import React from "react"
-
 export type EmployeeProps = {
   id: number,
   nama_lengkap: string,
@@ -43,34 +41,22 @@ export default function EmployeesTable({
             </div>
           </div>
         </div>
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Tanggal Lahir</th>
-              <th>Jenis Kelamin</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {isLoading && <LoadingComponent />}
-            {data.length === 0 ? (
-              <tr><td colSpan={5} className="text-center">Tidak ada data</td></tr>
-            ) : data.map((item, index) => (
-              <tr key={index}>
-                <td className="align-middle">{item.nama_lengkap}</td>
-                <td className="align-middle">{item.email}</td>
-                <td className="align-middle">{item.tanggal_lahir}</td>
-                <td className="align-middle">{item.jenis_kelamin}</td>
-                <td className="align-middle">
-                  <button className="btn btn-sm btn-info">Edit</button>
-                  <button className="btn btn-sm btn-danger ml-1">Hapus</button>
-                </td>
+        <div className="table-responsive">
+          <table className="table table-bordered text-nowrap">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Tanggal Lahir</th>
+                <th>Jenis Kelamin</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {TableBody(isLoading, data)}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="card-footer clearfix">
         <Pagination />
@@ -79,7 +65,31 @@ export default function EmployeesTable({
   )
 }
 
-const LoadingComponent = () => (
+const TableBody = (isLoading: boolean, data: EmployeeProps[]) => {
+  if (isLoading) {
+    return <LoaderComponent />
+  }
+
+  return (
+    data.length === 0 ? (
+      <tr><td colSpan={5} className="text-center">Tidak ada data</td></tr>
+    ) : data.map((item, index) => (
+      <tr key={index}>
+        <td className="align-middle">{item.nama_lengkap}</td>
+        <td className="align-middle">{item.email}</td>
+        <td className="align-middle">{item.tanggal_lahir}</td>
+        <td className="align-middle">{item.jenis_kelamin}</td>
+        <td className="align-middle">
+          <button className="btn btn-sm btn-info">Edit</button>
+          <button className="btn btn-sm btn-danger ml-1">Hapus</button>
+        </td>
+      </tr>
+    ))
+  )
+}
+
+
+const LoaderComponent = () => (
   <tr>
     <td colSpan={5} className="text-center py-5">
       <span className="fas fa-spinner fa-spin" style={{ fontSize: '2rem' }}></span>
