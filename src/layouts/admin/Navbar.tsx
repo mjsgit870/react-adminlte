@@ -1,4 +1,4 @@
-import LogoutModal from "../LogoutModal";
+import LogoutModal from "../../components/LogoutModal";
 
 export default function Navbar() {
   return (
