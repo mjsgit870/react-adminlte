@@ -1,4 +1,4 @@
-import ContentWrapper from "../components/admin-layout/ContentWrapper";
+import ContentWrapper from "../layouts/admin/ContentWrapper";
 
 export default function DashboardPage() {
   return (

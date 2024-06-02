@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // pages
 import LoginPage from './pages/auth/LoginPage'
-import AdminLayout from './components/admin-layout'
+import AdminLayout from './layouts/admin'
 import DashboardPage from './pages/DashboardPage'
 import EmployeesPage from './pages/employees'
 import PositionsPage from './pages/PositionsPage'

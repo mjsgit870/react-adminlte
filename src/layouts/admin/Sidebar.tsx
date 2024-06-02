@@ -16,11 +16,7 @@ export default function Sidebar() {
         {/* Sidebar user panel (optional) */}
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div className="image">
-            <img
-              src={UserImage}
-              className="img-circle elevation-2"
-              alt="User Image"
-            />
+            <img src={UserImage} className="img-circle elevation-2" alt="User Image" />
           </div>
           <div className="info">
             <a href="#" className="d-block">Julian Saputra</a>
@@ -29,12 +25,7 @@ export default function Sidebar() {
         {/* SidebarSearch Form */}
         <div className="form-inline">
           <div className="input-group" data-widget="sidebar-search">
-            <input
-              className="form-control form-control-sidebar"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
+            <input className="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search" />
             <div className="input-group-append">
               <button className="btn btn-sidebar">
                 <i className="fas fa-search fa-fw" />
@@ -47,26 +38,26 @@ export default function Sidebar() {
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li className="nav-item">
               <NavLink to="/dashboard" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fas fa-chart-pie" />
+                <i className="nav-icon fad fa-chart-pie" />
                 <p>Dashboard</p>
               </NavLink>
             </li>
             <li className="nav-header">DATA MASTER</li>
             <li className="nav-item">
               <NavLink to="/employees" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fas fa-id-card" />
+                <i className="nav-icon fad fa-id-card" />
                 <p>Karyawan</p>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/positions" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fas fa-layer-group" />
+                <i className="nav-icon fad fa-layer-group" />
                 <p>Posisi dan Jabatan</p>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/users" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <i className="nav-icon fas fa-users" />
+                <i className="nav-icon fad fa-users" />
                 <p>User</p>
               </NavLink>
             </li>

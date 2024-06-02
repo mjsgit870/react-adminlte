@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 // components
-import AuthLayout from "../../components/auth-layout";
+import AuthLayout from "../../layouts/auth";
 import { ZodType, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 

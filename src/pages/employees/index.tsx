@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ContentWrapper from "../../components/admin-layout/ContentWrapper";
+import ContentWrapper from "../../layouts/admin/ContentWrapper";
 import EmployeesTable, { EmployeeProps } from "./EmployeesTable";
 
 export default function EmployeesPage() {
